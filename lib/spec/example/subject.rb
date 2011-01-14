@@ -21,7 +21,7 @@ module Spec
         end
         
         def its(attribute, &block)
-          describe(attribute) do
+          describe(instance_eval(&subject)) do
             example do
               self.class.class_eval do
                 define_method(:subject) do
